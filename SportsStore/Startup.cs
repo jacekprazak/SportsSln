@@ -26,7 +26,7 @@ namespace SportsStore
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseStatusCodePages();
             app.UseStaticFiles();
 
