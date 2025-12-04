@@ -8,13 +8,21 @@
 <html>
 <head>
     <meta name="viewport" content="width-device-width" />
+    <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Sports Store</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="bg-dark text-white p-2">
+        <a class="navbar-brand m-lg-2">Sklep sportowy</a>
+    </div>
+    <div class="row m-1 p-1">
+        <div id="categories" class="col-3">
+            Później umieścimy coś użytecznego.
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
     </div>
 </body>
-
 
 </html>
