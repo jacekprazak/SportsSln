@@ -25,11 +25,11 @@ namespace SportsStore.Tests
 
             HomeController controller = new HomeController(mock.Object);
             //act
-            IEnumerable<Product> result =
-                (controller.Index() as ViewResult).ViewData.Model
-                as IEnumerable<Product>;
+            ProductListViewModel result =
+                controller.Index().ViewData.Model
+                as ProductListViewModel;
             //assert
-            Product[] prodArray = result.ToArray();
+            Product[] prodArray = result.Products.ToArray();
             Assert.True(prodArray.Length == 2);
             Assert.Equal("P1", prodArray[0].Name);
             Assert.Equal("P2", prodArray[1].Name);
@@ -52,10 +52,10 @@ namespace SportsStore.Tests
             HomeController controller = new HomeController(mock.Object);
             controller.PageSize = 3;
             //Act
-            IEnumerable<Product> result = 
-                (controller.Index(2) as ViewResult).ViewData.Model as IEnumerable<Product>;
+            ProductListViewModel result = 
+                controller.Index(2).ViewData.Model as ProductListViewModel;
             //Assert
-            Product[] prodArray = result.ToArray();
+            Product[] prodArray = result.Products.ToArray();
             Assert.True(prodArray.Length == 2);
             Assert.Equal("P4", prodArray[0].Name);
             Assert.Equal("P5", prodArray[1].Name);
